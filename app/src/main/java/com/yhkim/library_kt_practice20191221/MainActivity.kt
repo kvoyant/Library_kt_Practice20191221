@@ -26,6 +26,8 @@ class MainActivity : BaseActivity() {
             startActivity(intent)
         }
 
+        //https://gun0912.tistory.com/61
+        // 마시벨로6 이상에서는 권한때문에 앱이 죽어버리므로 개발시 꼭 권한동의를 받는 알림을 넣어야 하므로 테드퍼미션을 사용한다.
         callBtn.setOnClickListener {
 
 //            전화 권한 요청 (3) => 획득 완료되면 (1) => 인텐트를 이용해서 전화걸기 (2)
