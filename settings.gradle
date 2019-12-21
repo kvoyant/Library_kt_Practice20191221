@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name='Library_kt_Practice20191221'
