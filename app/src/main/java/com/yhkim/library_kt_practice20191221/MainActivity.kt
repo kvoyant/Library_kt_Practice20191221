@@ -19,9 +19,16 @@ class MainActivity : BaseActivity() {
     }
 
     override fun setupEvents() {
+
+        profileImage.setOnClickListener {
+            val intent = Intent(mContext,LargeProfileImageActivity::class.java)
+            intent.putExtra("imgUrl","https://m1.daumcdn.net/cfile297/image/990F2A425D0A96F10A7E54")
+            startActivity(intent)
+        }
+
         callBtn.setOnClickListener {
 
-//            전화 권한 요청 (3) => 획득 완료되면 (1) => 인텐트를 이용해서 전화걸기 (3)
+//            전화 권한 요청 (3) => 획득 완료되면 (1) => 인텐트를 이용해서 전화걸기 (2)
 
             val permissionListener = object : PermissionListener {
                 override fun onPermissionGranted() {
@@ -40,6 +47,7 @@ class MainActivity : BaseActivity() {
             TedPermission.with(mContext)
                 .setPermissionListener(permissionListener)
                 .setDeniedMessage("권한설정이 필요합니다.")
+                .setRationaleMessage("바로 전화를 걸기 위해 필요합니다.")
                 .setPermissions(Manifest.permission.CALL_PHONE) //ctrl + Alt = o : import 정리
                 .check()
 
@@ -47,12 +55,10 @@ class MainActivity : BaseActivity() {
     }
 
     override fun setValues() {
-//        Glide.with(mContext).load("https://m1.daumcdn.net/cfile297/image/990F2A425D0A96F10A7E54").into(profileImage)
+        Glide.with(mContext).load("https://m1.daumcdn.net/cfile297/image/990F2A425D0A96F10A7E54").into(profileImage)
 
         //움직이는 gif 적용은 ??
-        Glide.with(mContext).load("http://m1.daumcdn.net/cfile297/image/990F2A425D0A96F10A7E54")
-            //.placeholder(R.drawable.back001)
-            .into(profileImage)
+//        Glide.with(mContext).load("http://www.hnwoori.com/news/photo/201502/113193_765_4915.jpg").into(profileImage)
     }
 
 }
