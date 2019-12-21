@@ -17,8 +17,8 @@ class MainActivity : BaseActivity() {
     }
 
     override fun setValues() {
-        Glide.with(mContext).load("https://m1.daumcdn.net/cfile297/image/990F2A425D0A96F10A7E54").into(profileImage)
-//        Glide.with(mContext).load("https://m1.daumcdn.net/cfile265/image/996BF54A5A9F2D802FB722").into(profileImage)
+//        Glide.with(mContext).load("https://m1.daumcdn.net/cfile297/image/990F2A425D0A96F10A7E54").into(profileImage)
+        Glide.with(mContext).load("http://m1.daumcdn.net/cfile297/image/990F2A425D0A96F10A7E54").into(profileImage)
     }
 
 }
